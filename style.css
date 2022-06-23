@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+body {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.heading {
+  font-size: 3rem;
+  padding: 20px;
+  text-align: center;
+  border-bottom: solid 0.5px rgb(240, 234, 234);
+}
+.container {
+  align-items: center;
+  margin: 10%;
+  width: 50%;
+}
+.display-balance {
+  text-align: center;
+  padding: 10px;
+}
+.container-summery {
+  text-align: center;
+  margin-top: 5%;
+  border: solid 0.5px rgb(202, 196, 196);
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.income-expence-container {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  margin-left: 0.2%;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.income-total {
+  width: 50%;
+  border-right: solid 1px rgb(201, 199, 199);
+}
+.expense-total {
+  width: 50%;
+}
+.form-control {
+  margin-top: 5%;
+  padding: 25px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+.submit-btn {
+  cursor: pointer;
+  background-color: #7b50f1;
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+.row-summery-plus {
+  margin-top: 2%;
+  padding: 10px;
+  border: solid 0.5px rgb(219, 217, 217);
+  background-color: #5cb969;
+  color: white;
+  border-radius: 5px;
+}
+
+.row-summery-minus {
+  margin-top: 2%;
+  padding: 10px;
+  border: solid 0.5px rgb(219, 217, 217);
+  background-color: rgb(238, 91, 91);
+  color: white;
+  border-radius: 5px;
+}
+
+.col {
+  text-align: right;
+}
+
+.amount__income {
+  color: #2ee446;
+}
+.amount__expense {
+  color: rgb(245, 52, 52);
+}

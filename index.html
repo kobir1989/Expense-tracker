@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500&display=swap");
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading-container">
+        <h1 class="heading">Expense Tracker</h1>
+      </div>
+      <!--display total-->
+      <div class="display-balance">
+        <h2>YOUR BALANCE</h2>
+        <h1 id="total-account">৳ 0.00</h1>
+      </div>
+
+      <!--display total income and expense-->
+      <div class="income-expence-container">
+        <div class="income-total" id="display--income">
+          <h3 class="__income">Income</h3>
+          <h3 class="amount__income" id="total-income">+৳ 0.00</h3>
+        </div>
+        0
+        <div class="expense-total" id="display--expense">
+          <h3 class="__expense">Expense</h3>
+          <h3 class="amount__expense" id="total-expense">-৳ 0.00</h3>
+        </div>
+      </div>
+
+      <!--history-->
+      <div class="container-summery" id="summery-plus">
+        <h3>History</h3>
+        <div class="row-summery-plus row">
+          <div class="col col-plus">book</div>
+          <div class="col">+৳ 100.00</div>
+        </div>
+        <div class="row-summery-minus row">
+          <div class="col col-plus">book</div>
+          <div class="col">-৳ 100.00</div>
+        </div>
+      </div>
+
+      <!--form -->
+      <form id="form">
+        <div class="form-control">
+          <h4>Add new transection</h4>
+          <label for="text">Add Text</label>
+          <input type="text" id="text" placeholder="Add Text..." />
+          <label for="amount">Add Amount</label>
+          <input type="number" id="amount" placeholder="Add Amount..." />
+          <button class="submit-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+    <small> ©Kabir Hossain</small>
+    <script href="UI.js"></script>
+    <script href="app.js"></script>
+  </body>
+</html>
