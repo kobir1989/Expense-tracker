@@ -110,10 +110,6 @@ input[type="number"] {
   border-radius: 5px;
 }
 
-.col {
-  text-align: right;
-}
-
 .amount__income {
   color: #2ee446;
 }
