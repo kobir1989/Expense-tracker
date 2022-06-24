@@ -12,17 +12,18 @@ const containerSummary = document.querySelector(".container-summery");
 ////////////////////////////////////////////////////////////////////////////
 
 // Display User input in UI
+
 const renderInput = function (item) {
+  const date = item.date;
   const userText = item.text;
-  const userAmount = item.amount;
+  const userAmount = item.amount.toFixed(2);
   if (userAmount > 0) {
     const htmlPlus = `
-     
        <div class="row row-summery-plus">
         <button class= "delete-btn">X</button>
-       <div class= "col">Date</div>
+       <div class= "col">${date}</div>
         <div class= "col">${userText}</div>
-       <div class= "col">${userAmount}</div>
+       <div class= "col">৳${userAmount}</div>
      
       </div>
     `;
@@ -32,7 +33,7 @@ const renderInput = function (item) {
     const htmlMinus = `
    <div class="row row-summery-minus">
      <button class= "delete-btn">X</button>
-       <div class= "col">Date</div>
+       <div class= "col">${date}</div>
         <div class= "col">${userText}</div>
        <div class= "col">${userAmount}</div>
       </div>
@@ -42,16 +43,20 @@ const renderInput = function (item) {
   }
 };
 
-// Error Message
+// Show Error Message
+
 const error = function () {
   const errorMsg = `
   <div class="error"> Invalid Input!</div>
   `;
-  containerSummary.innerHTML = errorMsg;
+  containerSummary.insertAdjacentHTML("beforeend", errorMsg);
   setTimeout(() => {
     clearError();
   }, 2000);
 };
+
+//clear Error Message
+
 const clearError = function () {
   const currentError = document.querySelector(".error");
   if (error) {

@@ -1,13 +1,7 @@
-const dummyTrans = [
-  { date: "date", text: "salary", amount: 10100 },
-  { date: "date", text: "Food", amount: -100 },
-  { date: "date", text: "Income", amount: 1100 },
-  { date: "date", text: "Bills", amount: -100 },
-];
-
-let transection = dummyTrans;
+let transection = [];
 
 //Calc transections
+
 const calcMoney = function () {
   const transections = transection.map((item) => item.amount);
   const totalBalance = transections
@@ -35,15 +29,13 @@ const addNewTrans = function (e) {
   if (text.value === "" || amount.value === "") {
     error();
   } else {
-    const inputObj = {
-      date: "11/10/2022",
+    const inputData = {
+      date: creatDate(),
       text: text.value,
       amount: Number(amount.value),
     };
-    dummyTrans.push(inputObj);
-    renderInput(inputObj);
-    console.log(inputObj);
-
+    transection.push(inputData);
+    renderInput(inputData);
     calcMoney();
   }
   text.value = "";
@@ -56,6 +48,14 @@ const deleteBtn = function (e) {
   if (e.target.className === "delete-btn") {
     e.target.parentElement.remove();
   }
+};
+
+//Add Date to History
+const creatDate = function () {
+  const time = new Date().toString().split(" ").slice(4, 5);
+  const today = new Date().toLocaleDateString();
+
+  return `${today} (Time-${time[0]})`;
 };
 
 //Event Listeners
