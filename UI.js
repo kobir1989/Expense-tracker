@@ -37,3 +37,20 @@ const renderInput = function (item) {
     containerSummary.insertAdjacentHTML("beforeend", htmlMinus);
   }
 };
+
+// Error Message
+const error = function () {
+  const errorMsg = `
+  <div class="error"> Invalid Input!</div>
+  `;
+  containerSummary.innerHTML = errorMsg;
+  setTimeout(() => {
+    clearError();
+  }, 2000);
+};
+const clearError = function () {
+  const currentError = document.querySelector(".error");
+  if (error) {
+    currentError.remove();
+  }
+};

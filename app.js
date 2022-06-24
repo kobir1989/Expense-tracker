@@ -22,9 +22,9 @@ const calcMoney = function () {
     .filter((item) => item < 0)
     .reduce((accu, item) => (accu += item), 0)
     .toFixed(2);
-  totalAmount.textContent = `${totalBalance}`;
-  totalIncome.textContent = `${income}`;
-  totalExpense.textContent = `${expense}`;
+  totalAmount.textContent = `৳${totalBalance}`;
+  totalIncome.textContent = `৳${income}`;
+  totalExpense.textContent = `৳${Math.abs(expense)}`;
 };
 calcMoney();
 
@@ -32,7 +32,7 @@ calcMoney();
 const addNewTrans = function (e) {
   e.preventDefault();
   if (text.value === "" || amount.value === "") {
-    alert("invalid input");
+    error();
   } else {
     const inputObj = {
       date: "11/10/2022",
@@ -45,6 +45,8 @@ const addNewTrans = function (e) {
 
     calcMoney();
   }
+  text.value = "";
+  amount.value = "";
 };
 
 form.addEventListener("submit", addNewTrans);
