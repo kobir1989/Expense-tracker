@@ -12,25 +12,28 @@ const containerSummary = document.querySelector(".container-summery");
 ////////////////////////////////////////////////////////////////////////////
 
 // Display User input in UI
-const renderInputPlus = function (text, amount) {
-  const htmlPlus = `
+const renderInput = function (item) {
+  const userText = item.text;
+  const userAmount = item.amount;
+  if (userAmount > 0) {
+    const htmlPlus = `
        <div class="row row-summery-plus">
        <div class= "col">Date</div>
-        <div class= "col">${text}</div>
-       <div class= "col">${amount}</div>
+        <div class= "col">${userText}</div>
+       <div class= "col">${userAmount}</div>
       </div>
     `;
 
-  containerSummary.insertAdjacentHTML("beforeend", htmlPlus);
-};
-const renderInputMinus = function (text, amount) {
-  const htmlMinus = `
+    containerSummary.insertAdjacentHTML("beforeend", htmlPlus);
+  } else {
+    const htmlMinus = `
    <div class="row row-summery-minus">
        <div class= "col">Date</div>
-        <div class= "col">${text}</div>
-       <div class= "col">${amount}</div>
+        <div class= "col">${userText}</div>
+       <div class= "col">${userAmount}</div>
       </div>
     `;
 
-  containerSummary.insertAdjacentHTML("beforeend", htmlMinus);
+    containerSummary.insertAdjacentHTML("beforeend", htmlMinus);
+  }
 };

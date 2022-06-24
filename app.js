@@ -1,11 +1,11 @@
-const dummytrans = [
-  { date: "11/02/2022", text: "Food", amount: -500 },
-  { date: "17/02/2022", text: "Salary2", amount: 2000 },
-  { date: "17/02/2022", text: "Salary", amount: 10000 },
-  { date: "21/02/2022", text: "Bills", amount: -2000 },
+const dummyTrans = [
+  { date: "date", text: "salary", amount: 10100 },
+  { date: "date", text: "Food", amount: -100 },
+  { date: "date", text: "Income", amount: 1100 },
+  { date: "date", text: "Bills", amount: -100 },
 ];
 
-let transection = dummytrans;
+let transection = dummyTrans;
 
 //calc transections
 const calcMoney = function () {
@@ -31,13 +31,19 @@ calcMoney();
 // Submit BTN
 const addNewTrans = function (e) {
   e.preventDefault();
-
-  const inputText = text.value;
-  const inputAmount = Number(amount.value);
-  if (inputAmount > 0) {
-    renderInputPlus(inputText, inputAmount);
+  if (text.value === "" || amount.value === "") {
+    alert("invalid input");
   } else {
-    renderInputMinus(inputText, inputAmount);
+    const inputObj = {
+      date: "11/10/2022",
+      text: text.value,
+      amount: Number(amount.value),
+    };
+    dummyTrans.push(inputObj);
+    renderInput(inputObj);
+    console.log(inputObj);
+
+    calcMoney();
   }
 };
 
