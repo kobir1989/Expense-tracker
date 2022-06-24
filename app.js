@@ -7,7 +7,7 @@ const dummyTrans = [
 
 let transection = dummyTrans;
 
-//calc transections
+//Calc transections
 const calcMoney = function () {
   const transections = transection.map((item) => item.amount);
   const totalBalance = transections
@@ -28,7 +28,8 @@ const calcMoney = function () {
 };
 calcMoney();
 
-// Submit BTN
+// Submit Btn
+
 const addNewTrans = function (e) {
   e.preventDefault();
   if (text.value === "" || amount.value === "") {
@@ -49,4 +50,14 @@ const addNewTrans = function (e) {
   amount.value = "";
 };
 
+//Delete Btn
+
+const deleteBtn = function (e) {
+  if (e.target.className === "delete-btn") {
+    e.target.parentElement.remove();
+  }
+};
+
+//Event Listeners
 form.addEventListener("submit", addNewTrans);
+containerSummary.addEventListener("click", deleteBtn);

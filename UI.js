@@ -17,10 +17,13 @@ const renderInput = function (item) {
   const userAmount = item.amount;
   if (userAmount > 0) {
     const htmlPlus = `
+     
        <div class="row row-summery-plus">
+        <button class= "delete-btn">X</button>
        <div class= "col">Date</div>
         <div class= "col">${userText}</div>
        <div class= "col">${userAmount}</div>
+     
       </div>
     `;
 
@@ -28,6 +31,7 @@ const renderInput = function (item) {
   } else {
     const htmlMinus = `
    <div class="row row-summery-minus">
+     <button class= "delete-btn">X</button>
        <div class= "col">Date</div>
         <div class= "col">${userText}</div>
        <div class= "col">${userAmount}</div>
